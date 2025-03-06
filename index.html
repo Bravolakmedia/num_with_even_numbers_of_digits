@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finding Numbers With Even Number of Digits</title>
+
+</head>
+<body>
+    <h1>Problem: Find the number of numbers that have even digits in an array</h1>
+    <h2>Solution: Algorithm Used</h2>
+    <p>
+        <ol> I initialized count = 0, to store the count of number with even digits. </ol> 
+        <ol> I looped through each number in the array: I used .toString() to convert the numbers into a string.
+            I used .length to get the length of the string which is the number of digits in a number.
+            I used digitCount to store the number of digits in a number and checked if it is even.
+            For even digits counted, count is incremented. 
+        </ol>
+    <ol> I returned count to output the number of even digit numbers in the array. </ol> 
+    </p>
+    <script>
+        class Solution {
+    findNumbers(nums) {
+        let count = 0;
+
+        for (let num of nums) {
+            let digitCount = num.toString().length;
+            if (digitCount % 2 === 0) { 
+                count++;
+            }
+        }
+
+        return count; 
+    }
+}
+
+const solution = new Solution();
+const numbers = [12, 345, 2, 6, 7896, 345682];
+console.log(solution.findNumbers(numbers)); 
+
+    </script>
+</body>
+</html>
